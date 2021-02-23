@@ -14,7 +14,9 @@ class MyDashboard extends LitElement {
   render() {
     return html`
       <frc-dashboard>
+        <frc-nt-number-default key="/gyro" value="100"></frc-nt-number-default>
         <frc-control-panel current-color="red"></frc-control-panel>
+        <frc-gyro source-key="/gyro"></frc-gyro>
       </frc-dashboard>
     `;
   }
