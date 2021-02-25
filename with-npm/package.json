@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@frc-web-components/frc-web-components": "^3.0.5"
+    "@frc-web-components/frc-web-components": "^3.0.6"
   }
 }
