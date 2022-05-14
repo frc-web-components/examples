@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import KeyValueTable from './components/KeyValueTable';
 import useGlobalListener from './networktables/useGlobalListener';
-import NetworkTables from './networktables/networktables';
 import useEntry from './networktables/useEntry';
-
-window.NetworkTables = NetworkTables;
+import './App.css';
 
 function App() {
   const [tableEntries, setTableEntries] = useState({});
@@ -15,13 +13,23 @@ function App() {
     }));
   }, true);
 
-  const [gyroAngle] = useEntry('/gyro/angle', 0);
+  const [gyroAngle, setGyroAngle] = useEntry('/gyro/angle', 0);
   const [gyroPrecision] = useEntry('/gyro/precision', 2);
 
   return (
     <div className="App">
       <KeyValueTable keyValuePairs={tableEntries} />
       <frc-gyro value={gyroAngle} precision={gyroPrecision}></frc-gyro>
+      <div className="gyro-input">
+        <label>Gyro Angle:</label>
+        <input
+          type="range"
+          min="-360"
+          max="360"
+          value={gyroAngle}
+          onChange={ev => setGyroAngle(parseFloat(ev.target.value))}
+        />
+      </div>
     </div>
   );
 }
