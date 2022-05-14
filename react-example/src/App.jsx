@@ -18,7 +18,6 @@ function App() {
 
   return (
     <div className="App">
-      <KeyValueTable keyValuePairs={tableEntries} />
       <frc-gyro value={gyroAngle} precision={gyroPrecision}></frc-gyro>
       <div className="gyro-input">
         <label>Gyro Angle:</label>
@@ -30,6 +29,7 @@ function App() {
           onChange={ev => setGyroAngle(parseFloat(ev.target.value))}
         />
       </div>
+      <KeyValueTable keyValuePairs={tableEntries} />
     </div>
   );
 }
