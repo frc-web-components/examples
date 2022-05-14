@@ -17,6 +17,7 @@ function App() {
   return (
     <div className="App">
       <KeyValueTable keyValuePairs={tableEntries} />
+      <frc-gyro value={30}></frc-gyro>
     </div>
   );
 }
