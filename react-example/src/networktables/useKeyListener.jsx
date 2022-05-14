@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import NetworkTables from './networktables';
 
-function useGlobalListener(callback, immediateNotify) {
+function useKeyListener(key, callback, immediateNotify) {
   useEffect(() => {
-    return NetworkTables.addGlobalListener((key, value, isNew) => {
+    return NetworkTables.addKeyListener(key, (key, value, isNew) => {
       callback(key, value, isNew);
     }, immediateNotify);
   }, []);
 }
 
-export default useGlobalListener;
+export default useKeyListener;
