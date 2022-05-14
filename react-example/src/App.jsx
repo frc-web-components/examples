@@ -1,32 +1,22 @@
 import { useState } from 'react';
-import './App.css';
+import KeyValueTable from './components/KeyValueTable';
+import useGlobalListener from './networktables/useGlobalListener';
+import NetworkTables from './networktables/networktables';
+
+window.NetworkTables = NetworkTables;
 
 function App() {
+  const [tableEntries, setTableEntries] = useState({});
+  useGlobalListener((key, value) => {
+    setTableEntries(previousValue => ({
+      ...previousValue,
+      [key]: value,
+    }));
+  }, true);
 
   return (
     <div className="App">
-      <table>
-        <thead>
-          <tr>
-            <th>Key</th>
-            <th>Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Some key</td>
-            <td>Some value</td>
-          </tr>
-          <tr>
-            <td>Some key</td>
-            <td>Some value</td>
-          </tr>
-          <tr>
-            <td>Some key</td>
-            <td>Some value</td>
-          </tr>
-        </tbody>
-      </table>
+      <KeyValueTable keyValuePairs={tableEntries} />
     </div>
   );
 }
