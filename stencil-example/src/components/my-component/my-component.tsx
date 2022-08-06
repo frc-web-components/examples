@@ -25,10 +25,6 @@ export class MyComponent {
     return (this.first || '') + (this.middle ? ` ${this.middle}` : '') + (this.last ? ` ${this.last}` : '')
   }
 
-  format(first: string, middle: string, last: string): string {
-    return (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
-  }
-
   render() {
     return <div>Hello, World! I'm {this.getText()}</div>;
   }

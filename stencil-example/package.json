@@ -24,6 +24,8 @@
     "generate": "stencil generate"
   },
   "dependencies": {
+    "@frc-web-components/dashboard": "^4.0.2-alpha.0",
+    "@frc-web-components/plugins": "^4.0.2-alpha.0",
     "@stencil/core": "^2.13.0"
   },
   "license": "MIT"
