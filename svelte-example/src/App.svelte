@@ -1,8 +1,6 @@
-<svelte:options tag="my-app" />
+<svelte:options tag="my-app"/>
 
 <script>
-  import Counter from './lib/Counter.svelte'
+  import MyCounter from './lib/MyCounter.svelte'
 </script>
-
-<my-counter></my-counter>
 

@@ -8,6 +8,10 @@
     "build": "vite build",
     "preview": "vite preview"
   },
+  "dependencies": {
+    "@frc-web-components/dashboard": "^4.0.2-alpha.0",
+    "@frc-web-components/plugins": "^4.0.2-alpha.0"
+  },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.1",
     "svelte": "^3.49.0",
