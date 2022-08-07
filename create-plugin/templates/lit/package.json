@@ -1,7 +1,9 @@
 {
-  "name": "lit-example",
-  "private": true,
+  "name": "{{name}}",
   "version": "0.0.0",
+  "description": "{{description}}",
+  "author": "{{author}}",
+  "email": "{{email}}",
   "type": "module",
   "main": "dist/my-element.es.js",
   "exports": {
@@ -24,5 +26,6 @@
   "devDependencies": {
     "typescript": "^4.6.4",
     "vite": "^3.0.0"
-  }
+  },
+  "license": "{{license}}"
 }
