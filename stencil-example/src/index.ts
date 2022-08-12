@@ -6,11 +6,15 @@ const dashboard = new FrcDashboard(document.body);
 addPlugins(dashboard);
 
 dashboard.addElements({
-  'my-component': {
+  'my-boolean-box': {
+    dashboard: {
+      displayName: 'Boolean Box',
+    },
     properties: {
-      first: { type: 'String' },
-      middle: { type: 'String' },
-      last: { type: 'String' }
+      value: { type: 'Boolean', primary: true },
+      trueColor: { type: 'String', input: { type: 'ColorPicker' }, defaultValue: '#00ff00', attribute: 'true-color' },
+      falseColor: { type: 'String', input: { type: 'ColorPicker' }, defaultValue: '#ff0000', attribute: 'false-color' },
+      label: { type: 'String' }
     }
   }
 })

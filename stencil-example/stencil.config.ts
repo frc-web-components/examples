@@ -1,6 +1,10 @@
 import { Config } from '@stencil/core';
 
 export const config: Config = {
+  invisiblePrehydration: false,
+  hydratedFlag: {
+    selector: 'attribute'
+  },
   namespace: 'stencil-example',
   outputTargets: [
     {
