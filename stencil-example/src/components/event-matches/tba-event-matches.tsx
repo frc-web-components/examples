@@ -11,7 +11,11 @@ export class TbaEventMatches {
   @Prop() eventMatches: Match[] = [];
 
   getMatchesByLevel(level: string): Match[] {
-    return this.eventMatches.filter(({ comp_level }) => comp_level === level);
+    return this.eventMatches
+      .filter(({ comp_level }) => comp_level === level)
+      .sort((match1, match2) => {
+        return match1.match_number - match2.match_number;
+      });
   }
 
   render() {
@@ -25,7 +29,6 @@ export class TbaEventMatches {
         <table>
           <thead>
             <tr>
-              <th>Video</th>
               <th>Match</th>
               <th colSpan={6}>Red Alliance</th>
               <th colSpan={6}>Blue Alliance</th>
@@ -75,20 +78,28 @@ export class TbaEventMatches {
     );
   }
 
+  getTeamNumber(teamKey: string): string {
+    return teamKey.replace(/^frc/, '');
+  }
+
   renderMatch(title: string, match: Match) {
-    const video = match.videos?.[0].key;
+    const redScore = match.alliances?.red.score ?? 0;
+    const blueScore = match.alliances?.blue.score ?? 0;
+    const redWins = redScore > blueScore;
+    const blueWins = blueScore > redScore;
+    const redClasses = ['red-alliance', redWins ? 'winner' : ''].join(' ');
+    const blueClasses = ['blue-alliance', blueWins ? 'winner' : ''].join(' ');
     return (
       <tr>
-        <td></td>
         <td>{title}</td>
-        <td colSpan={2}>{match.alliances?.red?.team_keys[0]}</td>
-        <td colSpan={2}>{match.alliances?.red?.team_keys[1]}</td>
-        <td colSpan={2}>{match.alliances?.red?.team_keys[2]}</td>
-        <td colSpan={2}>{match.alliances?.blue?.team_keys[0]}</td>
-        <td colSpan={2}>{match.alliances?.blue?.team_keys[1]}</td>
-        <td colSpan={2}>{match.alliances?.blue?.team_keys[2]}</td>
-        <td>{match.alliances?.red.score}</td>
-        <td>{match.alliances?.blue.score}</td>
+        <td class={redClasses} colSpan={2}>{this.getTeamNumber(match.alliances?.red?.team_keys[0])}</td>
+        <td class={redClasses} colSpan={2}>{this.getTeamNumber(match.alliances?.red?.team_keys[1])}</td>
+        <td class={redClasses} colSpan={2}>{this.getTeamNumber(match.alliances?.red?.team_keys[2])}</td>
+        <td class={blueClasses} colSpan={2}>{this.getTeamNumber(match.alliances?.blue?.team_keys[0])}</td>
+        <td class={blueClasses} colSpan={2}>{this.getTeamNumber(match.alliances?.blue?.team_keys[1])}</td>
+        <td class={blueClasses} colSpan={2}>{this.getTeamNumber(match.alliances?.blue?.team_keys[2])}</td>
+        <td class={redClasses}>{redScore}</td>
+        <td class={blueClasses}>{blueScore}</td>
       </tr>
     )
   }

@@ -11,10 +11,6 @@
   </head>
   <body>
     <my-boolean-box source-key="/component"></my-boolean-box>
-    <script type="module">
-      NetworkTables.setValue('/component/first', 'FIRST');
-      NetworkTables.setValue('/component/middle', 'MIDDLE');
-      NetworkTables.setValue('/component/last', 'LAST');
-    </script>
+    <tba-event-matches source-provider="tba" source-key="getEventMatches/frc254/2022casj"></tba-event-matches>
   </body>
 </html>
