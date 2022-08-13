@@ -10,11 +10,11 @@
     <script nomodule src="/build/stencil-example.js"></script>
   </head>
   <body>
-    <my-boolean-box source-key="/box"></my-boolean-box>
+    <my-boolean-box source-key="/box" label="Boolean Box"></my-boolean-box>
     <tba-event-matches source-provider="tba" source-key="getEventMatches/frc254/2022casj"></tba-event-matches>
     <script type="module">
       NetworkTables.setValue('/box/falseColor', 'pink');
-      NetworkTables.setValue('/box/trueColor', 'blue');
+      NetworkTables.setValue('/box/trueColor', 'yellow');
       NetworkTables.setValue('/box/value', true);
     </script>
   </body>

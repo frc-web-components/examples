@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property | Attribute | Description     | Type     | Default     |
-| -------- | --------- | --------------- | -------- | ----------- |
-| `first`  | `first`   | The first name  | `string` | `undefined` |
-| `last`   | `last`    | The last name   | `string` | `undefined` |
-| `middle` | `middle`  | The middle name | `string` | `undefined` |
+| Property     | Attribute     | Description | Type      | Default     |
+| ------------ | ------------- | ----------- | --------- | ----------- |
+| `falseColor` | `false-color` |             | `string`  | `'#ff0000'` |
+| `label`      | `label`       |             | `string`  | `''`        |
+| `trueColor`  | `true-color`  |             | `string`  | `'#00ff00'` |
+| `value`      | `value`       |             | `boolean` | `false`     |
 
 
 ----------------------------------------------
