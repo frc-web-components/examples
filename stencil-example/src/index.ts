@@ -1,12 +1,13 @@
 export { Components, JSX } from './components';
-import { FrcDashboard } from '@frc-web-components/dashboard';
-import addPlugins from '@frc-web-components/plugins';
+import { addDashboardComponents, addFrc } from '@frc-web-components/plugins';
 import TbaProvider from './providers/tba-provider';
+import createDashboard from '@frc-web-components/frc-web-components';
 
-const dashboard = new FrcDashboard(document.body);
-addPlugins(dashboard);
+const dashboard = createDashboard(document.body, 'my-dashboard');
+addDashboardComponents(dashboard);
+addFrc(dashboard);
+
 dashboard.addSourceProvider('tba', new TbaProvider());
-
 dashboard.addElements({
   'my-boolean-box': {
     dashboard: {
@@ -27,4 +28,4 @@ dashboard.addElements({
       eventMatches: { type: 'Object', primary: true },
     }
   }
-})
+}, 'My Elements');
