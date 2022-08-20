@@ -25,7 +25,13 @@ dashboard.addElements({
       displayName: 'TBA Event Matches',
     },
     properties: {
-      eventMatches: { type: 'Object', primary: true },
+      teamNumber: { type: 'Number', defaultValue: 254 },
+      eventKey: { type: 'String', defaultValue: '2022casj' },
+    }
+  },
+  'my-gamepad': {
+    dashboard: {
+      displayName: 'Gamepad'
     }
   }
 }, 'My Elements');
