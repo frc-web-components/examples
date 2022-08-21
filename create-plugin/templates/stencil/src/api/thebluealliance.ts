@@ -44,6 +44,10 @@ function getUrl(requestUrl: string): string {
 export async function getEventMatches(teamKey: string, eventKey: string): Promise<Match[]> {
   const url = getUrl(`/team/${teamKey}/event/${eventKey}/matches`);
   const response = await fetch(url);
-  return await response.json() as Match[];
+  if (response.ok) {
+    return await response.json() as Match[];
+  } else {
+    return [];
+  }
 }
 

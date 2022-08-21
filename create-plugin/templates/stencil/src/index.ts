@@ -1,12 +1,13 @@
 export { Components, JSX } from './components';
-import { FrcDashboard } from '@frc-web-components/dashboard';
-import addPlugins from '@frc-web-components/plugins';
-import TbaProvider from './providers/tba-provider';
+import { addDashboardComponents, addFrc } from '@frc-web-components/plugins';
+import createDashboard from '@frc-web-components/frc-web-components';
+import GamepadProvider from './providers/gamepad-provider';
 
-const dashboard = new FrcDashboard(document.body);
-addPlugins(dashboard);
-dashboard.addSourceProvider('tba', new TbaProvider());
+const dashboard = createDashboard(document.body, 'my-dashboard');
+addDashboardComponents(dashboard);
+addFrc(dashboard);
 
+dashboard.addSourceProvider('Gamepad', new GamepadProvider());
 dashboard.addElements({
   'my-boolean-box': {
     dashboard: {
@@ -24,7 +25,19 @@ dashboard.addElements({
       displayName: 'TBA Event Matches',
     },
     properties: {
-      eventMatches: { type: 'Object', primary: true },
+      teamNumber: { type: 'Number', defaultValue: 254 },
+      eventKey: { type: 'String', defaultValue: '2022casj' },
+    }
+  },
+  'xbox-controller': {
+    defaultSourceProvider: 'Gamepad',
+    defaultSourceKey: '/0',
+    dashboard: {
+      displayName: 'Xbox Controller'
+    },
+    properties: {
+      axes: { type: 'Array', input: { type: 'NumberArray'} },
+      buttonPresses: { type: 'Array', attribute: 'button-presses', input: { type: 'BooleanArray'} }
     }
   }
-})
+}, 'My Elements');

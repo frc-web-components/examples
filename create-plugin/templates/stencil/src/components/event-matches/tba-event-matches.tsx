@@ -1,5 +1,5 @@
-import { Component, Prop, Fragment, h } from '@stencil/core';
-import { Match } from '../../api/thebluealliance';
+import { Component, State, Prop, Fragment, h, Watch } from '@stencil/core';
+import { getEventMatches, Match } from '../../api/thebluealliance';
 
 @Component({
   tag: 'tba-event-matches',
@@ -8,7 +8,19 @@ import { Match } from '../../api/thebluealliance';
 })
 
 export class TbaEventMatches {
-  @Prop() eventMatches: Match[] = [];
+  @Prop() teamNumber: number = 254;
+  @Prop() eventKey: string = '2022casj';
+  @State() eventMatches: Match[] = [];
+
+  @Watch('teamNumber')
+  @Watch('eventKey')
+  async updateEventMatches() {
+    this.eventMatches = await getEventMatches(`frc${this.teamNumber}`, this.eventKey);
+  }
+
+  connectedCallback() {
+    this.updateEventMatches();
+  }
 
   getMatchesByLevel(level: string): Match[] {
     return this.eventMatches

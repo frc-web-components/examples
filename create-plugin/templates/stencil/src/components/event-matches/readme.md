@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property       | Attribute | Description | Type      | Default |
-| -------------- | --------- | ----------- | --------- | ------- |
-| `eventMatches` | --        |             | `Match[]` | `[]`    |
+| Property     | Attribute     | Description | Type     | Default      |
+| ------------ | ------------- | ----------- | -------- | ------------ |
+| `eventKey`   | `event-key`   |             | `string` | `'2022casj'` |
+| `teamNumber` | `team-number` |             | `number` | `254`        |
 
 
 ----------------------------------------------

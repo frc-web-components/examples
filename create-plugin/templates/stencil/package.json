@@ -21,17 +21,20 @@
     "loader/"
   ],
   "scripts": {
+    "start-dashboard": "frc-web-components --dashboard ./ --plugin /dist/esm/index.js",
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@frc-web-components/dashboard": "^4.1.0-alpha.0",
-    "@frc-web-components/plugins": "^4.1.0-alpha.0",
+    "@frc-web-components/dashboard": "^4.2.5",
+    "@frc-web-components/plugins": "^4.2.7",
+    "@frc-web-components/frc-web-components": "^4.2.8",
     "@stencil/core": "^2.13.0",
     "@webbitjs/store": "^5.1.0"
   },
   "devDependencies": {
+    "@frc-web-components/cli": "^4.2.8",
     "rollup-plugin-node-polyfills": "^0.2.1"
   },
   "license": "{{license}}"

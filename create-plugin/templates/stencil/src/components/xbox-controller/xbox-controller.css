@@ -1,0 +1,32 @@
+:host { 
+  display: inline-block; 
+  width: 400px;
+}
+
+svg {
+  width: 100%;
+}
+
+.button path {
+  fill: rgb(216, 216, 216); 
+  paint-order: stroke; 
+  stroke-width: 15px; 
+  stroke: rgb(0, 0, 0);
+  transform-origin: 50% 50%;
+}
+
+.button.pressed path {
+  fill: rgb(0, 0, 0);
+}
+
+.button.top path {
+  transform: rotate(180deg);
+}
+
+.button.left path {
+  transform: rotate(90deg);
+}
+
+.button.right path {
+  transform: rotate(270deg);
+}

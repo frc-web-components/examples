@@ -1,0 +1,63 @@
+
+.dashboard {
+  display: flex;
+}
+
+.sidebar {
+  font-family: sans-serif;
+  width: 220px;
+  height: 100vh;
+  background: #444;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  box-sizing: border-box;
+  color: white;
+}
+
+.sidebar header {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: lightblue;
+}
+
+.sidebar p {
+  margin: 0 0 5px;
+  cursor: pointer;
+}
+
+.sidebar p:hover {
+  font-weight: bold;
+}
+
+.sidebar p.selected {
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: default;
+}
+
+.editors {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 370px;
+  gap: 10px;
+  font-family: sans-serif;
+  padding: 15px 10px;
+  background: rgb(240, 240, 240);
+  box-sizing: border-box;
+}
+
+.editors header {
+  font-weight: bold;
+}
+
+.displayed-element {
+  padding: 10px;
+  height: 100vh;
+  overflow: auto;
+  box-sizing: border-box;
+  flex: 1;
+}

@@ -4,18 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
-    
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
     <script type="module" src="/build/index.esm.js"></script>
     <script type="module" src="/build/stencil-example.esm.js"></script>
     <script nomodule src="/build/stencil-example.js"></script>
   </head>
   <body>
-    <my-boolean-box source-key="/box" label="Boolean Box"></my-boolean-box>
-    <tba-event-matches source-provider="tba" source-key="getEventMatches/frc254/2022casj"></tba-event-matches>
-    <script type="module">
-      NetworkTables.setValue('/box/falseColor', 'pink');
-      NetworkTables.setValue('/box/trueColor', 'yellow');
-      NetworkTables.setValue('/box/value', true);
-    </script>
   </body>
 </html>
