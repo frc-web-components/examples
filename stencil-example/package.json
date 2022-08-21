@@ -26,13 +26,13 @@
   },
   "dependencies": {
     "@frc-web-components/dashboard": "^4.2.5",
-    "@frc-web-components/plugins": "^4.2.6",
-    "@frc-web-components/frc-web-components": "^4.2.6",
+    "@frc-web-components/plugins": "^4.2.7",
+    "@frc-web-components/frc-web-components": "^4.2.8",
     "@stencil/core": "^2.13.0",
     "@webbitjs/store": "^5.1.0"
   },
   "devDependencies": {
-    "@frc-web-components/cli": "^4.2.6",
+    "@frc-web-components/cli": "^4.2.8",
     "rollup-plugin-node-polyfills": "^0.2.1"
   },
   "license": "MIT"

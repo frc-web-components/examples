@@ -1,13 +1,13 @@
 export { Components, JSX } from './components';
 import { addDashboardComponents, addFrc } from '@frc-web-components/plugins';
-import TbaProvider from './providers/tba-provider';
 import createDashboard from '@frc-web-components/frc-web-components';
+import GamepadProvider from './providers/gamepad-provider';
 
 const dashboard = createDashboard(document.body, 'my-dashboard');
 addDashboardComponents(dashboard);
 addFrc(dashboard);
 
-dashboard.addSourceProvider('tba', new TbaProvider());
+dashboard.addSourceProvider('Gamepad', new GamepadProvider());
 dashboard.addElements({
   'my-boolean-box': {
     dashboard: {
@@ -30,8 +30,14 @@ dashboard.addElements({
     }
   },
   'my-gamepad': {
+    defaultSourceProvider: 'Gamepad',
+    defaultSourceKey: '/0',
     dashboard: {
       displayName: 'Gamepad'
+    },
+    properties: {
+      axes: { type: 'Array', input: { type: 'NumberArray'} },
+      buttonPresses: { type: 'Array', attribute: 'button-presses', input: { type: 'BooleanArray'} }
     }
   }
 }, 'My Elements');

@@ -56,4 +56,8 @@
 
 .displayed-element {
   padding: 10px;
+  height: 100vh;
+  overflow: auto;
+  box-sizing: border-box;
+  flex: 1;
 }

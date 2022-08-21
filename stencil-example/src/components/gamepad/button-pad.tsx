@@ -1,4 +1,5 @@
 import { FunctionalComponent, h, Fragment } from '@stencil/core';
+import Button from './button';
 
 interface ButtonPadProp {
   x: number;
@@ -19,32 +20,34 @@ const ButtonPad: FunctionalComponent<ButtonPadProp> = ({
   rightPressed
 }) => (
   <Fragment>
-    <svg>
-      <circle cx={x + 6} cy={y + 50} r="12.5" stroke="#aaa" stroke-width="1" fill="none" />
-    </svg>
-    <svg class={`top button ${topPressed ? 'pressed' : ''}`} x={x} y={y - 6} width="12" viewBox="0 0 100 57" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M 36.168 14.187 Q 51.202 0.642 65.531 14.187 L 87.15 34.625 Q 101.479 48.17 72.116 48.17 L 27.815 48.17 Q -1.548 48.17 13.486 34.625 Z"
-      />
-    </svg>
-
-    <svg class={`button ${bottomPressed ? 'pressed' : ''}`} x={x} y={y + 6} width="12" viewBox="0 0 100 57" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M 36.168 14.187 Q 51.202 0.642 65.531 14.187 L 87.15 34.625 Q 101.479 48.17 72.116 48.17 L 27.815 48.17 Q -1.548 48.17 13.486 34.625 Z"
-      />
-    </svg>
-
-    <svg class={`left button ${leftPressed ? 'pressed' : ''}`} x={x - 6} y={y} width="12" viewBox="0 0 100 57" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M 36.168 14.187 Q 51.202 0.642 65.531 14.187 L 87.15 34.625 Q 101.479 48.17 72.116 48.17 L 27.815 48.17 Q -1.548 48.17 13.486 34.625 Z"
-      />
-    </svg>
-
-    <svg class={`right button ${rightPressed ? 'pressed' : ''}`} x={x + 6} y={y} width="12" viewBox="0 0 100 57" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M 36.168 14.187 Q 51.202 0.642 65.531 14.187 L 87.15 34.625 Q 101.479 48.17 72.116 48.17 L 27.815 48.17 Q -1.548 48.17 13.486 34.625 Z"
-      />
-    </svg>
+    <Button
+      radius={4}
+      x={x}
+      y={y - 10}
+      pressed={topPressed}
+      color="#f8b711"
+    />
+    <Button
+      radius={4}
+      x={x}
+      y={y + 10}
+      pressed={bottomPressed}
+      color="#82b044"
+    />
+    <Button
+      radius={4}
+      x={x - 10}
+      y={y}
+      pressed={leftPressed}
+      color="#3185c3"
+    />
+    <Button
+      radius={4}
+      x={x + 10}
+      y={y}
+      pressed={rightPressed}
+      color="#d22828"
+    />
   </Fragment>
 );
 

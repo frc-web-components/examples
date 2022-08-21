@@ -18,7 +18,7 @@ const Joystick: FunctionalComponent<JoystickProps> = ({
     <Fragment>
       <svg>
         <circle cx={x + 6} cy={y + 50} r="12.5" stroke="#aaa" stroke-width="1" fill="none" />
-        <circle cx={x + 6 + 4 * xAxis} cy={y + 50 - 4 * yAxis} r="9" stroke="black" stroke-width="1" fill={`rgba(0,0,0,${fillOpacity})`} />
+        <circle cx={x + 6 + 4 * xAxis} cy={y + 50 + 4 * yAxis} r="9" stroke="black" stroke-width="1" fill={`rgba(0,0,0,${fillOpacity})`} />
       </svg>
     </Fragment>
   )
