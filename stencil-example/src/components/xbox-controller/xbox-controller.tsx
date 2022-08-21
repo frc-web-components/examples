@@ -5,8 +5,8 @@ import DPad from './d-pad';
 import Joystick from './joystick';
 
 @Component({
-  tag: 'my-gamepad',
-  styleUrl: 'my-gamepad.css',
+  tag: 'xbox-controller',
+  styleUrl: 'xbox-controller.css',
   shadow: true,
   assetsDirs: ['assets']
 })

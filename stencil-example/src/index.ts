@@ -29,11 +29,11 @@ dashboard.addElements({
       eventKey: { type: 'String', defaultValue: '2022casj' },
     }
   },
-  'my-gamepad': {
+  'xbox-controller': {
     defaultSourceProvider: 'Gamepad',
     defaultSourceKey: '/0',
     dashboard: {
-      displayName: 'Gamepad'
+      displayName: 'Xbox Controller'
     },
     properties: {
       axes: { type: 'Array', input: { type: 'NumberArray'} },
