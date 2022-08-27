@@ -30,10 +30,6 @@ export const config: Config = {
     nodePolyfills(),
   ],
   rollupPlugins: {
-    before: [
-      image(),
-
-    ],
     after: [
       copy({
         targets: [
