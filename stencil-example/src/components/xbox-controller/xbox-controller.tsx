@@ -1,14 +1,15 @@
-import { Component, h, getAssetPath, Prop } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 import Button from './button';
 import ButtonPad from './button-pad';
 import DPad from './d-pad';
+import GamepadBody from './gamepad-body';
 import Joystick from './joystick';
 
 @Component({
   tag: 'xbox-controller',
   styleUrl: 'xbox-controller.css',
   shadow: true,
-  assetsDirs: ['assets']
+  assetsDirs: ['./assets']
 })
 export class MyGamepad {
 
@@ -29,7 +30,8 @@ export class MyGamepad {
         viewBox="0 0 150 100"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <image href={getAssetPath('assets/gamepad.png')} width="150" height="100" />
+        {/* <image href={getAssetPath('./assets/gamepad.png')} width="150" height="100" /> */}
+        <GamepadBody />
         <ButtonPad 
           x={108} 
           y={-23} 

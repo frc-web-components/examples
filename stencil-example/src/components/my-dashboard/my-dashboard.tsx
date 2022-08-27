@@ -9,7 +9,9 @@ import { Component, Prop, State, h, Host, Watch } from '@stencil/core';
 
 export class TbaEventMatches {
   @State() element: HTMLElement;
+  @State() groups: string[] = [];
   @State() selectedElement: string;
+  @State() selectedGroup: string = 'My Elements';
   @Prop() dashboard: FrcDashboard;
 
   @Watch('selectedElement')
@@ -28,12 +30,52 @@ export class TbaEventMatches {
     }, 500);
   }
 
+  @Watch('dashboard')
+  updateOnDashboardChange() {
+    this.groups = this.getGroups();
+  }
+
+  @Watch('groups')
+  updateOnGroupsChange() {
+    if (!this.groups.includes(this.selectedGroup)) {
+      this.selectedGroup = this.groups[0] ?? '';
+    }
+  }
+
+  @Watch('selectedGroup')
+  updateOnSelectedGroupChange() {
+    const selectedElementGroup = this.getElementConfig().group;
+    if (selectedElementGroup !== this.selectedGroup) {
+      this.selectedElement = this.getElements()[0].selector;
+    }
+  }
+
+  getGroups(): string[] {
+    const selectors = this.dashboard.getConnector().getElementConfigSelectors();
+    const groups: string[] = selectors
+      .map(selector => {
+        const config = this.dashboard.getConnector().getElementConfig(selector);
+        return config.group;
+      })
+    return [...new Set(groups)].sort();
+  }
+
+  connectedCallback() {
+    if (this.dashboard) {
+      this.updateOnDashboardChange();
+    }
+  }
+
+  getElementConfig() {
+    return this.dashboard.getConnector().getMatchingElementConfig(this.element);
+  }
+
   getElements() {
     const selectors = this.dashboard.getConnector().getElementConfigSelectors();
     return selectors
       .filter(selector => {
         const config = this.dashboard.getConnector().getElementConfig(selector);
-        return config.group === 'My Elements';
+        return config.group === this.selectedGroup && config.dashboard.topLevel;
       })
       .map(selector => ({
         selector,
@@ -49,6 +91,13 @@ export class TbaEventMatches {
       <Host ref={(el) => this.element = el as HTMLElement}>
         <div class="dashboard">
           <div class="sidebar">
+            <select class="group-selector" onChange={(ev: any) => {
+              this.selectedGroup = ev.target.value;
+            }}>
+              {this.groups.map(group => (
+                <option value={group} selected={group === this.selectedGroup}>{group}</option>
+              ))}
+            </select>
             <header>Elements</header>
             {this.getElements().map(({ selector, name }) => (
               <p
