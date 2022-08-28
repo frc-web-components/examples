@@ -3,10 +3,8 @@ import { addDashboardComponents, addFrc } from '@frc-web-components/plugins';
 import createDashboard from '@frc-web-components/frc-web-components';
 import { FrcDashboard } from '@frc-web-components/dashboard';
 import GamepadProvider from './providers/gamepad-provider';
-import MyProvider from './providers/my-provider';
 
 export default function addPlugin(dashboard: FrcDashboard) {
-  dashboard.addSourceProvider('MyProvider', new MyProvider());
   dashboard.addSourceProvider('Gamepad', new GamepadProvider());
   dashboard.addElements({
     'my-boolean-box': {
