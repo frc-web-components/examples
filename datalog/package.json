@@ -1,0 +1,31 @@
+{
+  "name": "datalog",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/my-element.es.js",
+  "exports": {
+    ".": "./dist/my-element.es.js"
+  },
+  "types": "types/my-element.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "start": "vite",
+    "build": "tsc && vite build"
+  },
+  "dependencies": {
+    "lit": "^2.2.7",
+    "@frc-web-components/dashboard": "^4.3.0-alpha.0",
+    "@frc-web-components/plugins": "^4.3.0-alpha.0",
+    "@frc-web-components/frc-web-components": "^4.3.0-alpha.0",
+    "@webbitjs/store": "^5.5.0",
+    "@webbitjs/webbit": "^5.5.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4",
+    "vite": "^3.0.0"
+  }
+}
