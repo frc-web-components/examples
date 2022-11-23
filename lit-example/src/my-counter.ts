@@ -5,9 +5,17 @@ import { customElement, property } from 'lit/decorators.js'
 export class MyCounter extends LitElement {
 
   static styles = css`
+    :host {
+      display: inline-block;
+      width: 200px;
+      height: 50px;
+    }
+
     button {
       border: 3px solid black;
       background: white;
+      width: 100%;
+      height: 100%;
     }
   `;
 
