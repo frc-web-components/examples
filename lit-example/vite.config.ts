@@ -6,7 +6,11 @@ export default defineConfig({
     lib: {
       name: 'my-plugin',
       entry: 'src/plugin.ts',
-      formats: ['es']
+      formats: ['es'],
+      fileName: 'index',
     }
+  },
+  server: {
+    open: "/"
   }
 })

@@ -1,9 +1,9 @@
-import { html, css, LitElement } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { html, css, LitElement } from "lit";
+import { customElement, property } from "lit/decorators.js";
+import getAssetUrl from "./get-asset-url";
 
-@customElement('my-counter')
+@customElement("my-counter")
 export class MyCounter extends LitElement {
-
   static styles = css`
     :host {
       display: inline-block;
@@ -16,6 +16,14 @@ export class MyCounter extends LitElement {
       background: white;
       width: 100%;
       height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    button div {
+      padding: 10px;
+      background: white;
+      display: inline-block;
     }
   `;
 
@@ -23,17 +31,21 @@ export class MyCounter extends LitElement {
    * The number of times the button has been clicked.
    */
   @property({ type: Number, reflect: true })
-  count = 0
+  count = 0;
 
   private onClick() {
-    this.count++
+    this.count++;
   }
 
   render() {
     return html`
-      <button @click=${this.onClick} part="button">
+      <button
+        @click=${this.onClick}
+        part="button"
+        style='background-image: url("${getAssetUrl("button-background.jpg")}")'
+      >
         count is ${this.count}
       </button>
-    `
+    `;
   }
 }

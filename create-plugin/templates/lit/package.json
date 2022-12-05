@@ -5,11 +5,11 @@
   "author": "{{author}}",
   "email": "{{email}}",
   "type": "module",
-  "main": "dist/my-element.es.js",
+  "main": "dist/{{name}}.js",
   "exports": {
-    ".": "./dist/my-element.es.js"
+    ".": "./dist/{{name}}.js"
   },
-  "types": "types/my-element.d.ts",
+  "types": "types/index.d.ts",
   "files": [
     "dist",
     "types"
@@ -20,8 +20,7 @@
   },
   "dependencies": {
     "lit": "^2.2.7",
-    "@frc-web-components/dashboard": "^4.0.2-alpha.0",
-    "@frc-web-components/plugins": "^4.0.2-alpha.0"
+    "@frc-web-components/frc-web-components": "^4.5.0-alpha.0"
   },
   "devDependencies": {
     "typescript": "^4.6.4",

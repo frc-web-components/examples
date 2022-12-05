@@ -4,11 +4,13 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   build: {
     lib: {
-      entry: 'src/my-element.ts',
-      formats: ['es']
-    },
-    rollupOptions: {
-      external: /^lit/
+      name: 'my-plugin',
+      entry: 'src/plugin.ts',
+      formats: ['es'],
+      fileName: 'index',
     }
+  },
+  server: {
+    open: "/"
   }
 })

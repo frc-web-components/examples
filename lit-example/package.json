@@ -1,13 +1,13 @@
 {
-  "name": "lit-example",
+  "name": "my-plugin",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "dist/my-element.es.js",
+  "main": "dist/my-plugin.js",
   "exports": {
-    ".": "./dist/my-element.es.js"
+    ".": "./dist/my-plugin.js"
   },
-  "types": "types/my-element.d.ts",
+  "types": "types/index.d.ts",
   "files": [
     "dist",
     "types"
@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "lit": "^2.2.7",
-    "@frc-web-components/frc-web-components": "^4.4.4-alpha.0"
+    "@frc-web-components/frc-web-components": "^4.5.0-alpha.0"
   },
   "devDependencies": {
     "typescript": "^4.6.4",
