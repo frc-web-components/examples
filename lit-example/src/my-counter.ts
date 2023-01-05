@@ -1,6 +1,6 @@
 import { html, css, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import getAssetUrl from "./get-asset-url";
+import getAssetUrl from '@frc-web-components/fwc/get-asset-url';
 
 @customElement("my-counter")
 export class MyCounter extends LitElement {
