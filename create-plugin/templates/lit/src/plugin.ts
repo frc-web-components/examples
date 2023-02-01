@@ -1,5 +1,5 @@
 import './my-counter';
-import { FrcDashboard } from '@frc-web-components/frc-web-components';
+import { FrcDashboard } from '@frc-web-components/fwc';
 
 export default function addPlugin(dashboard: FrcDashboard) {
   dashboard.addElements({
