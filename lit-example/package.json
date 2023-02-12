@@ -3,18 +3,18 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "dist/my-plugin.js",
+  "main": "plugin/my-plugin.js",
   "exports": {
-    ".": "./dist/my-plugin.js"
+    ".": "./plugin/my-plugin.js"
   },
   "types": "types/index.d.ts",
   "files": [
-    "dist",
+    "plugin",
     "types"
   ],
   "scripts": {
     "start": "vite",
-    "build": "tsc && vite build"
+    "build": "tsc && vite build && node ./scripts/create-plugin-json.cjs"
   },
   "dependencies": {
     "lit": "^2.2.7",
