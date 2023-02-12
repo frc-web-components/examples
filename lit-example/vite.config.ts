@@ -8,7 +8,8 @@ export default defineConfig({
       entry: 'src/plugin.ts',
       formats: ['es'],
       fileName: 'index',
-    }
+    },
+    outDir: 'plugin'
   },
   server: {
     open: "/"

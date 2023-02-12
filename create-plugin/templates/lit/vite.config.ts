@@ -9,7 +9,7 @@ export default defineConfig({
       formats: ['es'],
       fileName: 'index',
     },
-    outDir: '{{name}}'
+    outDir: 'plugin'
   },
   server: {
     open: "/"

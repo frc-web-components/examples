@@ -5,9 +5,9 @@
   "author": "{{author}}",
   "email": "{{email}}",
   "type": "module",
-  "main": "dist/{{name}}.js",
+  "main": "plugin/index.js",
   "exports": {
-    ".": "./dist/{{name}}.js"
+    ".": "./plugin/index.js"
   },
   "types": "types/index.d.ts",
   "files": [
