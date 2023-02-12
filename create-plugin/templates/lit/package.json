@@ -10,7 +10,7 @@
   "exports": {
     ".": "./plugin/index.js"
   },
-  "types": "types/index.d.ts",
+  "types": "types/plugin.d.ts",
   "files": [
     "plugin",
     "types"
