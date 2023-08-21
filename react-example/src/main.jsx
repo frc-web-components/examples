@@ -2,13 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
-import NetworkTables from './networktables/networktables';
-import '@frc-web-components/frc-web-components/build/frc-web-components';
-
-NetworkTables.connectToWs('localhost:8888');
+import { NT4Provider } from './networktables/NT4Provider';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <NT4Provider address="localhost">
+      <App />
+    </NT4Provider>
   </React.StrictMode>
 )

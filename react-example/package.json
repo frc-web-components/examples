@@ -8,9 +8,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@frc-web-components/frc-web-components": "^3.2.5",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "@frc-web-components/fwc": "^1.9.0",
+    "@webbitjs/store": "^5.5.0",
+    "react": "experimental",
+    "react-dom": "experimental"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
