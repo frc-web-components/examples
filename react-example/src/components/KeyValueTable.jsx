@@ -14,7 +14,7 @@ function KeyValueTable({ keyValuePairs }) {
         {Object.entries(keyValuePairs).map(([key, value]) => (
           <tr key={key}>
             <td>{key}</td>
-            <td>{JSON.stringify(value)}</td>
+            <td><div>{JSON.stringify(value, null, 2)}</div></td>
           </tr>
         ))}
       </tbody>

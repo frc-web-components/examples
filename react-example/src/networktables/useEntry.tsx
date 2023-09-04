@@ -17,7 +17,11 @@ export function useEntry<T>(
   useKeyListener<T>(
     key,
     (_, newValue) => {
-      setValue(newValue);
+      if (newValue === undefined) {
+        setValue(defaultValue);
+      } else {
+        setValue(newValue);
+      }
     },
     true
   );

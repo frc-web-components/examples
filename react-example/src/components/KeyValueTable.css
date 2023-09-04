@@ -5,6 +5,7 @@
   font-family: sans-serif;
   min-width: 400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  max-width: 100%;
 }
 
 .key-value-table thead tr {
@@ -20,7 +21,14 @@
 .key-value-table th,
 .key-value-table td {
   padding: 12px 15px;
+  max-width: 600px;
 }
+
+.key-value-table td div {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
 
 .key-value-table tbody tr {
   border-bottom: 1px solid #dddddd;
