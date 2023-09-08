@@ -9,16 +9,6 @@ const GyroExample: React.FC = () => {
   return (
     <div>
       <Gyro value={gyroAngle} precision={gyroPrecision} />
-      <div className="gyro-input" >
-        <label>Gyro Angle:</label>
-        <input
-          type="range"
-          min="-360"
-          max="360"
-          value={gyroAngle}
-          onChange={ev => setGyroAngle(parseFloat(ev.target.value))}
-        />
-      </div>
     </div>
   );
 };

@@ -10,7 +10,7 @@ export default createComponent({
 });
 
 
-export function useMechanism2dRoots<T>(key: string) {
+export function useMechanism2dRoots(key: string) {
   const { store } = useNt4();
   const [roots, setRoots] = useState<Mechanism2dRoot[]>([]);
 

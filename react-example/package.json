@@ -8,11 +8,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@frc-web-components/fwc": "C:/Users/amory/Documents/repos/@frc-web-components/frc-web-components",
+    "@frc-web-components/fwc": "^1.10.0",
     "@lit-labs/react": "^2.0.2",
     "@webbitjs/store": "^5.5.0",
-    "react": "experimental",
-    "react-dom": "experimental"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
