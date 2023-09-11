@@ -10,14 +10,22 @@ import BasicFmsInfoExample from './BasicFmsInfoExample';
 import BooleanBoxExample from './BooleanBoxExample';
 import LineChartExample from './LineChartExample';
 import Mechanism2dExample from './Mechanism2dExample';
+import CanvasExample from './CanvasExample';
+import CameraExample from './CameraExample';
+import Field3dExample from './Field3dExample';
+import GaugeExample from './GaugeExample';
 
 const examples = {
   '3-Axis Accelerometer': <ThreeAxisAccelerometerExample />,
   'Accelerometer': <AccelerometerExample />,
   'Basic FMS Info': <BasicFmsInfoExample />,
   'Boolean Box': <BooleanBoxExample />,
+  'Camera': <CameraExample />,
+  'Canvas': <CanvasExample />,
   'Encoder': <EncoderExample />,
   'Field': <FieldExample />,
+  'Field3d': <Field3dExample />,
+  'Gauge': <GaugeExample />,
   'Gyro': <GyroExample />,
   'Line Chart': <LineChartExample />,
   'Mechanism2d': <Mechanism2dExample />
