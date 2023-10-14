@@ -14,6 +14,8 @@ import CanvasExample from './CanvasExample';
 import CameraExample from './CameraExample';
 import Field3dExample from './Field3dExample';
 import GaugeExample from './GaugeExample';
+import IconExample from './IconExample';
+import LoggerExample from './LoggerExample';
 
 const examples = {
   '3-Axis Accelerometer': <ThreeAxisAccelerometerExample />,
@@ -27,7 +29,9 @@ const examples = {
   'Field3d': <Field3dExample />,
   'Gauge': <GaugeExample />,
   'Gyro': <GyroExample />,
+  'Icon': <IconExample />,
   'Line Chart': <LineChartExample />,
+  'Logger': <LoggerExample />,
   'Mechanism2d': <Mechanism2dExample />
 };
 

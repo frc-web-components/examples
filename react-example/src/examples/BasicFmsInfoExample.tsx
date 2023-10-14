@@ -5,8 +5,6 @@ import BasicFmsInfo from "../components/BasicFmsInfo";
 const BasicFmsInfoExample: React.FC = () => {
   const fmsInfo = useFmsInfo('/FMSInfo');
 
-  console.log('fmsInfo:', fmsInfo)
-
   return (
     <div>
       <BasicFmsInfo {...fmsInfo} />

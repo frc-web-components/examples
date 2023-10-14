@@ -1,5 +1,4 @@
 import React from "react";
-import Field, { FieldPath, FieldRobot } from "../components/Field";
 import useEntry from "../networktables/useEntry";
 import Encoder from "../components/Encoder";
 
