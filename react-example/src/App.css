@@ -18,3 +18,14 @@
   font-size: 16px;
   padding: 5px 2px;
 }
+
+[data-theme="dark"] {
+  background: rgb(35, 51, 72);
+  & .theme-chooser {
+    color: white;
+  }
+}
+
+.theme-chooser {
+  margin-bottom: 10px;
+}

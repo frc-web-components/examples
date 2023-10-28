@@ -12,7 +12,7 @@ const LineChartExample: React.FC = () => {
         <LineChartData value={data1} />
         <LineChartData value={data2} color="blue" yAxis={1} />
         <LineChartAxis min={-5} max={5} />
-        <LineChartAxis autoFit side="right" />
+        <LineChartAxis side="right" />
         <LineChartLegend position="se" direction="vertical" inside />
       </LineChart>
     </div>
