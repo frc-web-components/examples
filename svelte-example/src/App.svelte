@@ -1,6 +1,43 @@
-<svelte:options tag="my-app"/>
+<script lang="ts">
+  import { DashboardThemes, darkTheme } from "@frc-web-components/fwc/themes"
+  import Examples from "./lib/Examples.svelte"
+  const themes = new DashboardThemes()
+  themes.addThemeRules("dark", darkTheme)
 
-<script>
-  import MyCounter from './lib/MyCounter.svelte'
+  let theme = "light"
+
+
+  function updateTheme(newTheme: string) {
+    theme = newTheme
+    themes.setTheme(document.body, theme)
+  }
+
 </script>
 
+<div class="App">
+  <div class="theme-chooser">
+    <label>
+      <input
+        type="radio"
+        name="theme-chooser"
+        on:click={() => {
+          updateTheme('light')
+        }}
+        checked={theme === "light"}
+      />{" "}
+      Light Theme
+    </label>
+    <label>
+      <input
+        type="radio"
+        name="theme-chooser"
+        on:click={() => {
+          updateTheme('dark')
+        }}
+        checked={theme === "dark"}
+      />{" "}
+      Dark Theme
+    </label>
+  </div>
+  <Examples />
+</div>
