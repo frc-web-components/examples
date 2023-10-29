@@ -1,17 +1,18 @@
 <script lang="ts">
-  import { DashboardThemes, darkTheme } from "@frc-web-components/fwc/themes"
-  import Examples from "./lib/Examples.svelte"
-  const themes = new DashboardThemes()
-  themes.addThemeRules("dark", darkTheme)
+  import { setNt4Context } from "./lib/networktables";
+  import { DashboardThemes, darkTheme } from "@frc-web-components/fwc/themes";
+  import Examples from "./lib/Examples.svelte";
 
-  let theme = "light"
+  setNt4Context('localhost');
+  const themes = new DashboardThemes();
+  themes.addThemeRules("dark", darkTheme);
 
+  let theme = "light";
 
   function updateTheme(newTheme: string) {
-    theme = newTheme
-    themes.setTheme(document.body, theme)
+    theme = newTheme;
+    themes.setTheme(document.body, theme);
   }
-
 </script>
 
 <div class="App">
@@ -21,7 +22,7 @@
         type="radio"
         name="theme-chooser"
         on:click={() => {
-          updateTheme('light')
+          updateTheme("light");
         }}
         checked={theme === "light"}
       />{" "}
@@ -32,7 +33,7 @@
         type="radio"
         name="theme-chooser"
         on:click={() => {
-          updateTheme('dark')
+          updateTheme("dark");
         }}
         checked={theme === "dark"}
       />{" "}
