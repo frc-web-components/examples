@@ -13,12 +13,15 @@
     "types"
   ],
   "scripts": {
-    "start": "vite",
+    "dev": "vite",
     "build": "tsc && vite build && node ./scripts/create-plugin-json.cjs"
   },
   "dependencies": {
-    "lit": "^2.2.7",
-    "@frc-web-components/fwc": "^1.0.3"
+    "@frc-web-components/fwc": "^1.11.1",
+    "@lit/context": "^1.0.1",
+    "@lit/reactive-element": "^2.0.1",
+    "@webbitjs/store": "^5.5.0",
+    "lit": "^2.2.7"
   },
   "devDependencies": {
     "typescript": "^4.6.4",
