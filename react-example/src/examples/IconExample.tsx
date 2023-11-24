@@ -1,5 +1,5 @@
 import React from "react";
-import Icon from "../components/Icon";
+import { Icon } from "@frc-web-components/react";
 
 /**
  * SVG icons from https://fonts.google.com/icons

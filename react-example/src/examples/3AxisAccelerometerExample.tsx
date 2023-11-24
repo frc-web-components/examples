@@ -1,6 +1,5 @@
 import React from "react";
-import ThreeAxisAccelerometer from "../components/3AxisAccelerometer";
-import useEntry from "../networktables/useEntry";
+import { ThreeAxisAccelerometer, useEntry } from "@frc-web-components/react";
 
 const ThreeAxisAccelerometerExample: React.FC = () => {
   const [x] = useEntry("/dash/3AxisAccelerometer/x", 0);

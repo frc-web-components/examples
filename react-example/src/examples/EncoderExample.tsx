@@ -1,6 +1,5 @@
 import React from "react";
-import useEntry from "../networktables/useEntry";
-import Encoder from "../components/Encoder";
+import { Encoder, useEntry } from "@frc-web-components/react";
 
 const EncoderExample: React.FC = () => {
   const [speed] = useEntry("/dash/encoder/speed", 0);

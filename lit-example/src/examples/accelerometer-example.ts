@@ -12,19 +12,8 @@ export class AccelerometerExample extends LitElement {
   @state()
   nt4!: NetworkTables;
 
-  @state() value = 0;
-
-  firstUpdated() {
-    this.nt4.addKeyListener(
-      "/dash/accelerometer/value",
-      (_, value: number) => {
-        this.value = value;
-      },
-      true
-    );
-  }
-  
   render() {
-    return html` <frc-accelerometer value=${this.value}></frc-accelerometer> `;
+    const value = this.nt4?.$value("/dash/accelerometer/value", 0);
+    return html` <frc-accelerometer value=${value}></frc-accelerometer> `;
   }
 }

@@ -1,6 +1,5 @@
 import React from "react";
-import BooleanBox from "../components/BooleanBox";
-import useEntry from "../networktables/useEntry";
+import { BooleanBox, useEntry } from "@frc-web-components/react";
 
 const BooleanBoxExample: React.FC = () => {
   const [value] = useEntry("/dash/booleanBox/value", false);

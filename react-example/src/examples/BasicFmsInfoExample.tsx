@@ -1,6 +1,5 @@
 import React from "react";
-import { useFmsInfo } from "../components/BasicFmsInfo";
-import BasicFmsInfo from "../components/BasicFmsInfo";
+import { BasicFmsInfo, useFmsInfo } from "@frc-web-components/react";
 
 const BasicFmsInfoExample: React.FC = () => {
   const fmsInfo = useFmsInfo('/FMSInfo');

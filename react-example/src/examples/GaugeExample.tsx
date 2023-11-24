@@ -1,6 +1,5 @@
 import React from "react";
-import Gauge from "../components/Gauge";
-import useEntry from "../networktables/useEntry";
+import { useEntry, Gauge } from "@frc-web-components/react";
 
 const GaugeExample: React.FC = () => {
   const [value] = useEntry("/dash/gauge/value", 0);

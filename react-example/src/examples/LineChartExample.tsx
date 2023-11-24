@@ -1,10 +1,15 @@
 import React from "react";
-import LineChart, { LineChartAxis, LineChartData, LineChartLegend } from "../components/LineChart";
-import useEntry from "../networktables/useEntry";
+import {
+  useEntry,
+  LineChart,
+  LineChartAxis,
+  LineChartData,
+  LineChartLegend,
+} from "@frc-web-components/react";
 
 const LineChartExample: React.FC = () => {
-  const [data1] = useEntry('/dash/lineChart/data1', 0);
-  const [data2] = useEntry('/dash/lineChart/data2', 0);
+  const [data1] = useEntry("/dash/lineChart/data1", 0);
+  const [data2] = useEntry("/dash/lineChart/data2", 0);
 
   return (
     <div>

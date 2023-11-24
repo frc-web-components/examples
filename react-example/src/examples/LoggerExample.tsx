@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import Logger from "../components/Logger";
+import { Logger } from "@frc-web-components/react";
 import { debounce } from "lodash";
 
 const loggerLevels = ["debug", "info", "success", "warning", "error"];
@@ -29,7 +29,10 @@ const LoggerExample: React.FC = () => {
       <div className="inputs">
         <div className="input">
           <label>Logger Level:</label>
-          <select value={loggerLevel} onChange={ev => setLoggerLevel(ev.target.value)}>
+          <select
+            value={loggerLevel}
+            onChange={(ev) => setLoggerLevel(ev.target.value)}
+          >
             {loggerLevels.map((level) => (
               <option key={level}>{level}</option>
             ))}

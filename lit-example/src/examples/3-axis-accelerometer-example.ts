@@ -12,29 +12,13 @@ export class ThreeAxisAccelerometerExample extends LitElement {
   @state()
   nt4!: NetworkTables;
 
-  @state() x = 0;
-  @state() y = 0;
-  @state() z = 0;
-
-  firstUpdated() {
-    ["x", "y", "z"].forEach((prop) => {
-      this.nt4.addKeyListener(
-        `/dash/3AxisAccelerometer/${prop}`,
-        (_, value: number) => {
-          (this as any)[prop] = value;
-        },
-        true
-      );
-    });
-  }
-
   render() {
+    const x = this.nt4?.$value("/dash/3AxisAccelerometer/x", 0);
+    const y = this.nt4?.$value("/dash/3AxisAccelerometer/y", 0);
+    const z = this.nt4?.$value("/dash/3AxisAccelerometer/z", 0);
+
     return html`
-      <frc-3-axis-accelerometer
-        x=${this.x}
-        y=${this.y}
-        z=${this.z}
-      ></frc-3-axis-accelerometer>
+      <frc-3-axis-accelerometer x=${x} y=${y} z=${z}></frc-3-axis-accelerometer>
     `;
   }
 }

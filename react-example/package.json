@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@frc-web-components/fwc": "^1.11.1",
+    "@frc-web-components/react": "^0.0.0",
     "@lit-labs/react": "^2.0.2",
     "@webbitjs/store": "^5.5.0",
     "lodash": "^4.17.21",

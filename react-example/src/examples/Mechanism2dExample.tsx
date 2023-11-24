@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Mechanism2d, { useMechanism2dRoots } from "../components/Mechanism2d";
+import { Mechanism2d, useMechanism2dRoots } from "@frc-web-components/react";
 
 const Mechanism2dExample: React.FC = () => {
   const mechanism2dRoots = useMechanism2dRoots("/SmartDashboard/Mech2d");

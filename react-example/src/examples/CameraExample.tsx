@@ -1,9 +1,8 @@
 import React from "react";
-import Canvas, { CanvasMjpgStream } from "../components/Canvas";
-import useEntry from "../networktables/useEntry";
+import { CanvasMjpgStream, Canvas, useEntry } from "@frc-web-components/react";
 
 const CameraExample: React.FC = () => {
-  const [cameraSrcs] = useEntry('/CameraPublisher/USB Camera 0/streams', []);
+  const [cameraSrcs] = useEntry("/CameraPublisher/USB Camera 0/streams", []);
   return (
     <div>
       <Canvas style={{ width: "500px", height: "350px" }}>

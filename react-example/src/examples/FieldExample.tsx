@@ -1,6 +1,10 @@
 import React from "react";
-import Field, { FieldPath, FieldRobot } from "../components/Field";
-import useEntry from "../networktables/useEntry";
+import {
+  useEntry,
+  Field,
+  FieldPath,
+  FieldRobot,
+} from "@frc-web-components/react";
 
 const FieldExample: React.FC = () => {
   const [robotPose] = useEntry("/SmartDashboard/Field/Robot", []);

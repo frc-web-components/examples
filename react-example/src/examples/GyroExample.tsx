@@ -1,6 +1,5 @@
 import React from "react";
-import Gyro from "../components/Gyro";
-import useEntry from "../networktables/useEntry";
+import { useEntry, Gyro } from "@frc-web-components/react";
 
 const GyroExample: React.FC = () => {
   const [gyroAngle] = useEntry("/dash/gyro/angle", 0);

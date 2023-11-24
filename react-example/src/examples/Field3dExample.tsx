@@ -1,6 +1,5 @@
 import React from "react";
-import Field3d, { Field3dObject } from "../components/Field3d";
-import useEntry from "../networktables/useEntry";
+import { useEntry, Field3d, Field3dObject } from "@frc-web-components/react";
 
 const Field3dExample: React.FC = () => {
   const [robotPose] = useEntry("/SmartDashboard/Field/Robot", [0, 0, 0]);

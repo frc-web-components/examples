@@ -1,13 +1,14 @@
 import React from "react";
-import Canvas, {
+import {
   CanvasCircle,
   CanvasGroup,
   CanvasLine,
   CanvasNGon,
   CanvasRect,
   CanvasText,
-} from "../components/Canvas";
-import useEntry from "../networktables/useEntry";
+  Canvas,
+  useEntry,
+} from "@frc-web-components/react";
 
 const CanvasExample: React.FC = () => {
   const [text] = useEntry("/dash/canvas/text", "Text goes here...");
@@ -17,7 +18,12 @@ const CanvasExample: React.FC = () => {
   return (
     <div>
       <Canvas style={{ width: "500px", height: "350px" }}>
-        <CanvasText text={text} fontSize={30} fillColor="green" transform={[250, 25]} />
+        <CanvasText
+          text={text}
+          fontSize={30}
+          fillColor="green"
+          transform={[250, 25]}
+        />
         <CanvasLine points={[130, 45, 370, 45]} color="yellow" />
         <CanvasGroup
           transform={[100, 100, groupAngle]}

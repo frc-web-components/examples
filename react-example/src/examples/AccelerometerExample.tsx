@@ -1,6 +1,5 @@
 import React from "react";
-import Accelerometer from "../components/Accelerometer";
-import useEntry from "../networktables/useEntry";
+import { Accelerometer, useEntry } from "@frc-web-components/react";
 
 const AccelerometerExample: React.FC = () => {
   const [value] = useEntry("/dash/accelerometer/value", 0);
