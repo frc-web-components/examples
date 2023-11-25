@@ -1,5 +1,5 @@
 {
-  "name": "svelte-example2",
+  "name": "svelte-example",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@frc-web-components/fwc": "^1.11.1",
+    "@frc-web-components/svelte": "^0.0.0",
     "@webbitjs/store": "^5.5.0"
   }
 }

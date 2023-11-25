@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { setNt4Context } from "./lib/networktables";
+  import { setNt4Context } from "@frc-web-components/svelte";
   import { DashboardThemes, darkTheme } from "@frc-web-components/fwc/themes";
   import Examples from "./lib/Examples.svelte";
 
